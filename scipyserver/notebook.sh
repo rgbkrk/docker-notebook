@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Strict mode
 set -euo pipefail
@@ -15,5 +15,4 @@ if [ ! -f $PEM_FILE ]; then
     -subj "/C=XX/ST=XX/L=XX/O=dockergenerated/CN=dockergenerated"
 fi
 
-exec ipython notebook --no-browser --port 8888 --ip=* --certfile=$PEM_FILE --NotebookApp.password="$HASH" --matplotlib=inline
-
+exec ipython notebook --no-browser --port 8888 --ip=* --certfile=$PEM_FILE --NotebookApp.password="$HASH"

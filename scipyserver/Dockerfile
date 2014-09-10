@@ -11,6 +11,9 @@ ENV USER ipynb
 
 WORKDIR /home/ipynb/
 
+RUN mkdir -p /home/ipynb/.config/matplotlib/
+ADD matplotlibrc /home/ipynb/.config/matplotlib/matplotlibrc
+
 # You can mount your own SSL certs as necessary here
 ENV PEM_FILE /home/ipynb/key.pem
 
